@@ -1,32 +1,32 @@
 #Make sure to include the following packages 
-#1.
+#1.from sklearn.metrics import confusion_matrix, classification_report
+#2. from sklearn.preprocessing import StandardScaler
 
 #IMPLEMENTING THE RANDOM FOREST MODEL
 
-#FIRST, RESCALE DATA (Standard Scaling worked better on the random forest than the 
+#FIRST, RESCALE DATA (Standard Scaling worked better on the random forest than the MinMaxScaler)  
 scaler = StandardScaler()
-
 X = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)
-
-# Split into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=42)
 
-#INSTANTIATE RANDOM FOREST AND TRAIN MODEL (we adjusted the max depth to prevent overfitting & underfitting 
+#INSTANTIATE RANDOM FOREST AND TRAIN MODEL (we adjusted the max depth to prevent overfitting & underfitting)
 clf_rf = RandomForestClassifier(max_depth=4, random_state=0)
 clf_rf.fit(X_train, y_train)
 predictions_rf = clf_rf.predict(X_test)
-confusion_matrix_rf = confusion_matrix(y_test, predictions_rf)
 
 
 
 #COMPARE RESULTS OF LOGISTIC REGRESSION TO RANDOM FOREST 
 
 #CONFUSION TABLES 
+confusion_matrix_lr = confusion_matrix(y_test, y_pred) 
 confusion_matrix_rf = confusion_matrix(y_test, predictions_rf)
 print("Confusion Matrix Random Forest: \n", confusion_matrix_rf)
+print("Confusion Matrix Logistic Regression: \n", confusion_matrix_lr) 
 
-confusion_matrix(y_test, y_pred)
+#CLASSFICATION REPORT 
+print("Classification Report for Random Forest: \n", classification_report(y_test, predictions_rf))
+print("Classification Report Logistic Regression: \n", classification_report(y_test, y_pred))
 
 
-print("Classification Report Logistic Regression: \n", classification_report(y_test, predictions_lr))
-print("Classfication Report for Random Forest: \n", classification_report(y_test, )
+#DO ANALYSIS ON THE RESULTS 
