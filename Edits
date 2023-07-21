@@ -1,3 +1,6 @@
+#Make sure to include the following packages 
+#1.
+
 #IMPLEMENTING THE RANDOM FOREST MODEL
 
 #FIRST, RESCALE DATA (Standard Scaling worked better on the random forest than the 
