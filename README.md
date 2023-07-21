@@ -1,5 +1,9 @@
-did one-hot-encoding to bring accuracy pf logistic regresion to 85%
+1. Implemented one-hot-encoding to bring the accuracy of logistic regression to 85%
 
-used random forest to get accuracy of 86%
+2. Used random forest to achieve an accuracy of 86%
+
+3. RANDOM FOREST vs. LOGISTIC REGRESSION ANALYSIS
+Based on the Confusion Matrix, we can see that the Random Forest was more accurate ( 
+   
 
 *The overall code is in the first file
