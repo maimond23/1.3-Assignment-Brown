@@ -3,7 +3,7 @@
 2. Used random forest to achieve an accuracy of 86%
 
 3. RANDOM FOREST vs. LOGISTIC REGRESSION ANALYSIS
-Based on the Confusion Matrix, we can see that the Random Forest was more accurate ( 
+- Based on the Confusion Matrix, we can see that the Random Forest and  
    
 
 *The overall code is in the first file
