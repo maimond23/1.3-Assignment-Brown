@@ -8,4 +8,4 @@ Group members: Urja Saha, David Maimon, Zhraa Saad
 - Based on the Classification reports, we can see that both models performed very similarly. However, based on the confusion matrices, we can see that because the Random forest model had greater precision and accuracy, it is the superior model. 
    
 
-*The overall code is in the first file
+*The overall code is in the last file
