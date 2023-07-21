@@ -1,0 +1,26 @@
+#IMPLEMENTING THE RANDOM FOREST MODEL
+
+#FIRST, RESCALE DATA (Standard Scaling worked better on the random forest than the 
+scaler = StandardScaler()
+
+X = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=42)
+
+#INSTANTIATE RANDOM FOREST AND TRAIN MODEL 
+clf_rf = RandomForestClassifier(max_depth=4, random_state=0)
+clf_rf.fit(X_train, y_train)
+predictions_rf = clf_rf.predict(X_test)
+confusion_matrix_rf = confusion_matrix(y_test, predictions_rf)
+
+
+
+#COMPARE RESULTS OF LOGISTIC REGRESSION TO RANDOM FOREST 
+
+#CONFUSION TABLES 
+confusion_matrix_rf = confusion_matrix(y_test, predictions_rf)
+print("Confusion Matrix Random Forest: \n", confusion_matrix_rf)
+
+
+print("Classification Report Logistic Regression: \n", classification_report(y_test, predictions_lr))
