@@ -1,3 +1,5 @@
+Group members: Urja Saha, David Maimon, Zhraa Saad
+
 1. Implemented one-hot-encoding to bring the accuracy of logistic regression to 85%
 
 2. Used random forest to achieve an accuracy of 86%
